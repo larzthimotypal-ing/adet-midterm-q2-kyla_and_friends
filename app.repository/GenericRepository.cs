@@ -1,39 +1,30 @@
 ﻿using System.Linq;
 using app.domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace app.repository
 {
     public class GenericRepository<T> : IRepository<T> where T : BaseEntity
     {
-        public void Create(T entity)
-        {
-            throw new System.NotImplementedException();
-        }
+        private readonly StudentPortalDbContext _context;
+        private readonly DbSet<T> entities;
 
-        public void Delete(T entity)
+        public GenericRepository(StudentPortalDbContext context)
         {
-            throw new System.NotImplementedException();
+            this._context = context;
+            entities = _context.Set<T>();
         }
+        public void Create(T entity) => entities.Add(entity);
 
-        public T Get(int id)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void Delete(T entity) => entities.Remove(entity);
 
-        public IQueryable<T> GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+        public T Get(int id) => entities.Find(id);
 
-        public void SaveChanges()
-        {
-            throw new System.NotImplementedException();
-        }
+        public IQueryable<T> GetAll() => entities;
 
-        public void Update(T entity)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void SaveChanges() => _context.SaveChanges();
+
+        public void Update(T entity) => entities.Update(entity);
     }
 }
 
