@@ -5,9 +5,9 @@ using System.Text;
 
 namespace app.domain
 {
-    public class Admin : BaseEntity
+    public class Professor : BaseEntity
     {
-        public Admin()
+        public Professor()
         {
             Subjects = new HashSet<Subject>();
             Students = new HashSet<Student>();

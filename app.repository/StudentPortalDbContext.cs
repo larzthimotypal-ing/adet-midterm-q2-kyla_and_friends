@@ -10,7 +10,7 @@ namespace app.repository
         {
         }
 
-        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Professor> Professors { get; set; }
         public DbSet<GradesPerItem> GradesPerItems { get; set; }
         public DbSet<GradesPerTerm> GradesPerTerms { get; set; }
         public DbSet<Person> People { get; set; }
