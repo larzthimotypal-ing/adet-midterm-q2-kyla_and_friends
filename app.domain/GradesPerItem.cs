@@ -4,7 +4,7 @@ using System.Text;
 
 namespace app.domain
 {
-    class GradesPerItem : BaseEntity
+    public class GradesPerItem : BaseEntity
     {
         public int CreatedBy { get; set; }
         public int SubjectID { get; set; }

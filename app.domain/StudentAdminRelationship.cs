@@ -4,7 +4,7 @@ using System.Text;
 
 namespace app.domain
 {
-    class StudentAdminRelationship : BaseEntity
+    public class StudentAdminRelationship : BaseEntity
     {
         public int? StudentID { get; set; }
         public int? AdminID { get; set; }
