@@ -6,6 +6,6 @@ namespace app.domain
     public class BaseEntity
     {
         [Key]
-        int ID { get; set; }
+        public int ID { get; set; }
     }
 }
